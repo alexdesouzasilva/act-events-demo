@@ -4,6 +4,13 @@ on:
     types:
       - opened
   workflow_dispatch:
+  push:
+    brunches:
+      - develop
+      - 'release-*' # release-1.2.3 relese-esteira release-prod
+      - 'feat/**' # feature/actions
+    paths-ignore:
+      - '.github/workflows/*'
 jobs:
   build:
     runs-on: ubuntu-latest
